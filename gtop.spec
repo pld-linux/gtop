@@ -14,7 +14,7 @@ BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	glib-devel
 BuildRequires:	imlib-devel
-BuildRequires:	libgtop-devel >= 1.1.0
+BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	zlib-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
