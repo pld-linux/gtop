@@ -1,7 +1,7 @@
 Summary:	The GNOME system monitor
 Summary(pl):	Monitor systemu dla GNOME
 Name:		gtop
-Version:	1.0.7
+Version:	1.0.8
 Release:	1
 License:	GPL
 Group:		X11/GNOME/Applications
@@ -29,7 +29,7 @@ postaci graficznej informacje na temat pamiêci i procesów.
 
 %prep
 %setup -q
-%patch -p0
+%patch -p1
 
 %build
 gettextize --copy --force
@@ -56,5 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %config(noreplace) %verify(not size mtime md5) %{_datadir}/gtoprc
 
-%{_applnkdir}/Utilities/gtop.desktop
+%{_applnkdir}/System/gtop.desktop
 %{_datadir}/pixmaps/*
