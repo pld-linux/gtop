@@ -1,8 +1,8 @@
 Summary:	The GNOME system monitor
 Summary(pl):	Monitor systemu dla GNOME
 Name:		gtop
-Version:	1.0.9
-Release:	7
+Version:	1.0.10
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
@@ -13,7 +13,7 @@ URL:		http://www.gnome.org/
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel
-BuildRequires:	libgtop-devel >= 1.0.0
+BuildRequires:	libgtop-devel >= 1.0.6
 BuildRequires:	zlib-devel
 BuildRequires:	gettext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
