@@ -6,7 +6,7 @@ Release:	5
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gtop/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gtop/1.0/%{name}-%{version}.tar.gz
 Patch0:		%{name}-gcc296.patch
 Patch1:		%{name}-nodrag.patch
 Patch2:		%{name}-use_AM_GNU_GETTEXT.patch
@@ -14,12 +14,12 @@ Patch3:		%{name}-configure.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel
 BuildRequires:	libgtop-devel >= 1.0.6
+BuildRequires:	libtool
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
