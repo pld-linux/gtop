@@ -1,13 +1,13 @@
 Summary:	The GNOME system monitor
 Summary(pl):	Monitor systemu dla GNOME
 Name:		gtop
-Version:	1.0.4
+Version:	1.0.5
 Release: 	1
 Copyright: 	LGPL
 Group: 		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gtop/%{name}-%{version}.tar.gz
-Patch:		gtop-desktop.patch
+Patch:		gtop-applnk.patch
 URL:		http://www.gnome.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	gnome-libs-devel
