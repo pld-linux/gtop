@@ -2,7 +2,7 @@ Summary:	The GNOME system monitor
 Summary(pl):	Monitor systemu dla GNOME
 Name:		gtop
 Version:	1.0.13
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
@@ -13,12 +13,12 @@ Patch0:		%{name}-gcc296.patch
 Patch1:		%{name}-nodrag.patch
 Patch2:		%{name}-use_AM_GNU_GETTEXT.patch
 URL:		http://www.gnome.org/
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel
 BuildRequires:	libgtop-devel >= 1.0.6
 BuildRequires:	zlib-devel
-BuildRequires:	gettext-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -38,6 +38,7 @@ postaci graficznej informacje na temat pamiêci i procesów.
 %patch2 -p1
 
 %build
+rm -f missing
 libtoolize --copy --force
 gettextize --copy --force
 aclocal -I %{_aclocaldir}/gnome
