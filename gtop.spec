@@ -2,11 +2,13 @@ Summary:	The GNOME system monitor
 Summary(pl):	Monitor systemu dla GNOME
 Name:		gtop
 Version:	1.0.9
-Release:	1
+Release:	6
 License:	GPL
-Group:		X11/GNOME/Applications
-Group(pl):	X11/GNOME/Aplikacje
+Group:		X11/Applications
+Group(de):	X11/Applikationen
+Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gtop/%{name}-%{version}.tar.gz
+Patch0:		%{name}-gcc296.patch
 URL:		http://www.gnome.org/
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel
@@ -28,10 +30,10 @@ postaci graficznej informacje na temat pamiêci i procesów.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 gettextize --copy --force
-LDFLAGS="-s" ; export LDFLAGS
 %configure
 
 %{__make}
