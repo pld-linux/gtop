@@ -13,6 +13,9 @@ Patch0:		%{name}-gcc296.patch
 Patch1:		%{name}-nodrag.patch
 Patch2:		%{name}-use_AM_GNU_GETTEXT.patch
 URL:		http://www.gnome.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel
