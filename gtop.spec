@@ -1,60 +1,60 @@
-# Note that this is NOT a relocatable package
-%define ver      1.0.1
-%define rel      3
-%define prefix   /usr
+Summary:	The GNOME system monitor
+Summary(pl):	Monitor systemu dla GNOME
+Name:		gtop
+Version:	1.0.3
+Release: 	1
+Copyright: 	LGPL
+Group: 		X11/GNOME/Applications
+Group(pl):	X11/GNOME/Aplikacje
+Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gtop/%{name}-%{version}.tar.gz
+Patch:		gtop-desktop.patch
+URL:		http://www.gnome.org
+BuildRequires:	XFree86-devel
+BuildRequires:	gnome-libs-devel
+BuildRequires:	gtk+-devel
+BuildRequires:	glib-devel
+BuildRequires:	imlib-devel
+BuildRequires:	libgtop-devel >= 1.1.0
+BuildRequires:	zlib-devel
+BuildRoot:	/tmp/%{name}-%{version}-root
 
-Summary: The GNOME system monitor.
-Name: gtop
-Version: %ver
-Release: %rel
-Copyright: LGPL
-Group: Applications/System
-Source: ftp://ftp.gnome.org/pub/gtop-%{ver}.tar.gz
-BuildRoot: /var/tmp/gtop-%{PACKAGE_VERSION}-root
-Obsoletes: gnome
-URL: http://www.gnome.org
-Docdir: %{prefix}/doc
-
-Patch: gtop-desktop.patch
+%define		_prefix		/usr/X11R6
 
 %description
-GNOME is the GNU Network Object Model Environment. This powerful
-environment is both easy to use and easy to configure.
+This package will install the GNOME system monitor gtop, which shows memory 
+graphs and processes.
 
-This package will install the GNOME system monitor gtop,
-which shows memory graphs and processes.
+%description -l pl
+Ten pakiet zawiera gtop - monitor systemu dla GNOME, wy¶wietlaj±cy w postaci 
+graficznej informacje na temat pamiêci i procesów.
 
 %prep
-%setup
-
-%patch -p1
+%setup -q
+%patch -p0
 
 %build
-libtoolize --copy --force
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%prefix
+gettextize --copy --force
+LDFLAGS="-s" ; export LDFLAGS
+%configure
+
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
 
-make prefix=$RPM_BUILD_ROOT%{prefix} install
+gzip -9nf AUTHORS TODO ChangeLog
 
-#
-# hack or else desktop entry not installed
-#
-make prefix=$RPM_BUILD_ROOT%{prefix} INSTALL-data-local
-
-# strip binaries
-strip `file $RPM_BUILD_ROOT/%{prefix}/bin/* | awk -F':' '/not strip/ { print $1 }'`
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
-%defattr(-, root, root)
+%files -f %{name}.lang
+%defattr(644,root,root,755)
+%doc {AUTHORS,TODO,ChangeLog}.gz
+%attr(755,root,root) %{_bindir}/*
 
-%doc AUTHORS COPYING ChangeLog NEWS README
-%{prefix}/bin/*
-%{prefix}/share/gtoprc
-%{prefix}/share/locale/*/*/*
-%{prefix}/share/gnome/apps/*
+%config(noreplace) %verify(not size mtime md5) %{_datadir}/gtoprc
+
+%{_datadir}/applnk/Utilities/gtop.desktop
