@@ -1,0 +1,67 @@
+--- gtop-1.0.13/details.c.orig	Wed Mar 14 09:11:40 2001
++++ gtop-1.0.13/details.c	Tue Apr 17 18:54:37 2001
+@@ -555,15 +555,6 @@
+     gtk_clist_thaw (GTK_CLIST (mcl));
+ }
+ 
+-static void
+-drag_data_get (GtkWidget *widget, GdkDragContext *context,
+-	       GtkSelectionData *selection_data, guint info,
+-	       guint32 time, gchar *config_string)
+-{
+-    gtk_selection_data_set (selection_data, selection_data->target,
+-			    1, config_string, strlen (config_string));
+-}
+-
+ GtkWidget *
+ gtop_details_create_mem_map (gint pid)
+ {
+@@ -684,7 +675,6 @@
+     GTopProcViewDetails *dt = &d->details;
+  
+     if (!dt->mcl) {
+-	gchar *config_string;
+ 	GtkWidget *l;
+ 	gchar *t [MAP_COLS];
+ 	GtkStyle *style;
+@@ -770,16 +760,6 @@
+ 	gtk_notebook_append_page
+ 	    (GTK_NOTEBOOK (dt->nb), dt->mcl_sw, l);
+ 
+-	config_string = g_strdup_printf ("generic/text_maps/%d", pid);
+-		
+-	gtk_signal_connect (GTK_OBJECT (dt->nb), "drag_data_get",
+-			    GTK_SIGNAL_FUNC (drag_data_get),
+-			    config_string);
+-
+-	gtk_drag_source_set (dt->mcl, GDK_BUTTON1_MASK,
+-			     gtop_target_table, 1,
+-			     GDK_ACTION_COPY | GDK_ACTION_MOVE);
+-
+ 	gtk_widget_queue_resize (dt->mcl_sw);
+     }
+ 
+@@ -894,7 +874,6 @@
+     GTopProcViewDetails *dt = &d->details;
+ 
+     if (!dt->gswin) {
+-	gchar *config_string;
+ 	GtkWidget *l;
+ 	GtkWidget *da;
+ 	GtkWidget *f;
+@@ -929,15 +908,6 @@
+ 
+ 	gtk_notebook_append_page
+ 	    (GTK_NOTEBOOK (dt->nb), dt->gswin, l);
+-
+-	config_string = g_strdup_printf ("generic/graph_maps/%d", pid);
+-
+-	gtk_signal_connect (GTK_OBJECT (da), "drag_data_get",
+-			    GTK_SIGNAL_FUNC (drag_data_get), config_string);
+-
+-	gtk_drag_source_set (da, GDK_BUTTON1_MASK,
+-			     gtop_target_table, 1,
+-			     GDK_ACTION_COPY | GDK_ACTION_MOVE);
+ 
+ 	graph_update (dt->gg);
+ 	gtk_widget_queue_resize (dt->gswin);
