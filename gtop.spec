@@ -2,11 +2,12 @@ Summary:	The GNOME system monitor
 Summary(pl):	Monitor systemu dla GNOME
 Name:		gtop
 Version:	1.0.13
-Release:	5
+Release:	6
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gtop/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gtop/1.0/%{name}-%{version}.tar.gz
+# Source0-md5:	4580801db3c87784b25f46a5bf1f5aba
 Patch0:		%{name}-gcc296.patch
 Patch1:		%{name}-nodrag.patch
 Patch2:		%{name}-use_AM_GNU_GETTEXT.patch
