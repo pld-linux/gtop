@@ -2,7 +2,7 @@ Summary:	The GNOME system monitor
 Summary(pl):	Monitor systemu dla GNOME
 Name:		gtop
 Version:	1.0.9
-Release:	6
+Release:	7
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
