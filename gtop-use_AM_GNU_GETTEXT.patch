@@ -1,0 +1,11 @@
+--- gtop-1.0.13/configure.in~	Wed Mar 14 15:11:40 2001
++++ gtop-1.0.13/configure.in	Wed Jul 11 14:52:14 2001
+@@ -45,7 +45,7 @@
+ AC_CHECK_FUNCS(getcwd gettimeofday getwd putenv strdup strtoul uname)
+ 
+ ALL_LINGUAS="az ca cs da de el es fr ga gl hu it ja ko lt no pt pt_BR ro ru sk sl sv pl tr uk zh_CN.GB2312 zh_TW.Big5"
+-AM_GNOME_GETTEXT
++AM_GNU_GETTEXT
+ 
+ dnl Check for LibGTop
+ GNOME_INIT_LIBGTOP(1.0.6, fail)
