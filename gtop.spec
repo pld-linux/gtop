@@ -44,7 +44,7 @@ postaci graficznej informacje na temat pamiêci i procesów.
 rm -f missing
 %{__libtoolize}
 %{__gettextize}
-aclocal -I %{_aclocaldir}/gnome
+%{__aclocal} -I %{_aclocaldir}/gnome
 %{__autoconf}
 %{__automake}
 %configure
