@@ -6,11 +6,6 @@ Release:	4
 Epoch:		1
 License:	GPL
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(es):	X11/Aplicaciones
-Group(pl):	X11/Aplikacje
-Group(pt_BR):	X11/Aplicações
-Group(pt):	X11/Aplicações
 Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gtop/%{name}-%{version}.tar.gz
 Patch0:		%{name}-gcc296.patch
 Patch1:		%{name}-nodrag.patch
