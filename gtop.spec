@@ -8,7 +8,7 @@ Group: 		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
 Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gtop/%{name}-%{version}.tar.gz
 Patch:		gtop-desktop.patch
-URL:		http://www.gnome.org
+URL:		http://www.gnome.org/
 BuildRequires:	XFree86-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel
