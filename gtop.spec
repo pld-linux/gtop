@@ -41,7 +41,7 @@ postaci graficznej informacje na temat pamiêci i procesów.
 %build
 rm -f missing
 %{__libtoolize}
-gettextize --copy --force
+%{__gettextize}
 aclocal -I %{_aclocaldir}/gnome
 %{__autoconf}
 %{__automake}
