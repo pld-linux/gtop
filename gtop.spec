@@ -20,6 +20,7 @@ BuildRequires:	gettext-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
+%define		_applnkdir	%{_datadir}/applnk
 
 %description
 This package will install the GNOME system monitor gtop, which shows memory
@@ -58,4 +59,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %config(noreplace) %verify(not size mtime md5) %{_datadir}/gtoprc
 
-%{_datadir}/applnk/Utilities/gtop.desktop
+%{_applnkdir}/Utilities/gtop.desktop
+%{_datadir}/pixmaps/*
