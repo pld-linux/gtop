@@ -2,9 +2,9 @@ Summary:	The GNOME system monitor
 Summary(pl):	Monitor systemu dla GNOME
 Name:		gtop
 Version:	1.0.5
-Release: 	1
-Copyright: 	LGPL
-Group: 		X11/GNOME/Applications
+Release:	2
+License:	GPL
+Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
 Source:		ftp://ftp.gnome.org/pub/GNOME/stable/sources/gtop/%{name}-%{version}.tar.gz
 Patch:		gtop-applnk.patch
@@ -16,17 +16,18 @@ BuildRequires:	glib-devel
 BuildRequires:	imlib-devel
 BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	zlib-devel
+BuildRequires:	gettext-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define		_prefix		/usr/X11R6
 
 %description
-This package will install the GNOME system monitor gtop, which shows memory 
+This package will install the GNOME system monitor gtop, which shows memory
 graphs and processes.
 
 %description -l pl
-Ten pakiet zawiera gtop - monitor systemu dla GNOME, wy¶wietlaj±cy w postaci 
-graficznej informacje na temat pamiêci i procesów.
+Ten pakiet zawiera gtop - monitor systemu dla GNOME, wy¶wietlaj±cy w
+postaci  graficznej informacje na temat pamiêci i procesów.
 
 %prep
 %setup -q
