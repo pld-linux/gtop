@@ -60,4 +60,4 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not size mtime md5) %{_datadir}/gtoprc
 
 %{_applnkdir}/System/gtop.desktop
-%{_datadir}/pixmaps/*
+%{_pixmapsdir}/*
