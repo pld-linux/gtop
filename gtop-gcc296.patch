@@ -1,0 +1,182 @@
+--- gtop-1.0.9/main.c.gcc296	Sun Jun 18 14:59:38 2000
++++ gtop-1.0.9/main.c	Sun Jun 18 15:00:04 2000
+@@ -125,12 +125,12 @@
+ 	{ GNOME_APP_UI_TOGGLEITEM,
+ 	  N_("Show _menubar"), N_("Show menubar"),
+ 	  gtop_toggle_mtbar, (gpointer) FALSE, NULL,
+-	  GNOME_APP_PIXMAP_DATA, GNOME_APP_PIXMAP_NONE,
++	  GNOME_APP_PIXMAP_DATA, (gconstpointer) GNOME_APP_PIXMAP_NONE,
+ 	  'm', GDK_CONTROL_MASK, NULL },
+ 	{ GNOME_APP_UI_TOGGLEITEM,
+ 	  N_("Show _toolbar"), N_("Show toolbar"),
+ 	  gtop_toggle_mtbar, (gpointer) TRUE, NULL,
+-	  GNOME_APP_PIXMAP_DATA, GNOME_APP_PIXMAP_NONE,
++	  GNOME_APP_PIXMAP_DATA, (gconstpointer) GNOME_APP_PIXMAP_NONE,
+ 	  't', GDK_CONTROL_MASK, NULL },
+ 	GNOMEUIINFO_SEPARATOR,
+ 	GNOMEUIINFO_MENU_PREFERENCES_ITEM (gtop_show_properties, NULL),
+--- gtop-1.0.9/mdi.c.gcc296	Wed May 10 09:20:02 2000
++++ gtop-1.0.9/mdi.c	Sun Jun 18 15:00:20 2000
+@@ -51,12 +51,12 @@
+ 			       N_("Show all processes"),
+ 			       add_proc_child_cb,
+ 			       (gpointer) GTOP_PROCVIEW_ALL,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_User Processes"),
+ 			       N_("Only show user processes"),
+ 			       add_proc_child_cb,
+ 			       (gpointer) GTOP_PROCVIEW_USER,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_END
+ };
+ 
+@@ -65,27 +65,27 @@
+ 			       N_("Show resident sizes of processes"),
+ 			       add_mem_child_cb,
+ 			       (gpointer) GTOP_MEMUSAGE_RESIDENT,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_Shared Sizes of Processes"),
+ 			       N_("Show shared sizes of processes"),
+ 			       add_mem_child_cb,
+ 			       (gpointer) GTOP_MEMUSAGE_SHARED,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_Total Sizes of Processes"),
+ 			       N_("Show total sizes of processes"),
+ 			       add_mem_child_cb,
+ 			       (gpointer) GTOP_MEMUSAGE_SIZE,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_Virtual Sizes of Processes"),
+ 			       N_("Show virtual sizes of processes"),
+ 			       add_mem_child_cb,
+ 			       (gpointer) GTOP_MEMUSAGE_VIRTUAL,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("S_wapped Sizes of Processes"),
+ 			       N_("Show swapped sizes of processes"),
+ 			       add_mem_child_cb,
+ 			       (gpointer) GTOP_MEMUSAGE_SWAP,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_END
+ };
+ 
+@@ -94,17 +94,17 @@
+ 			       N_("Show total filesystem sizes"),
+ 			       add_fs_child_cb,
+ 			       (gpointer) GTOP_FSUSAGE_TOTAL,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_Used Filesystem Sizes"),
+ 			       N_("Show used filesystem sizes"),
+ 			       add_fs_child_cb,
+ 			       (gpointer) GTOP_FSUSAGE_USED,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_Free Filesystem Sizes"),
+ 			       N_("Show free filesystem sizes"),
+ 			       add_fs_child_cb,
+ 			       (gpointer) GTOP_FSUSAGE_FREE,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_END
+ };
+ 
+--- gtop-1.0.9/gtop-fsusage.c.gcc296	Sun Jun 18 15:01:28 2000
++++ gtop-1.0.9/gtop-fsusage.c	Sun Jun 18 15:01:50 2000
+@@ -25,17 +25,17 @@
+ 			       N_("Show total filesystem sizes"),
+ 			       gtop_fsusage_menu_cb,
+ 			       (gpointer) GTOP_FSUSAGE_TOTAL,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_Used Filesystem Sizes"),
+ 			       N_("Show used filesystem sizes"),
+ 			       gtop_fsusage_menu_cb,
+ 			       (gpointer) GTOP_FSUSAGE_USED,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_Free Filesystem Sizes"),
+ 			       N_("Show free filesystem sizes"),
+ 			       gtop_fsusage_menu_cb,
+ 			       (gpointer) GTOP_FSUSAGE_FREE,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_END
+ };
+ 
+--- gtop-1.0.9/gtop-memusage.c.gcc296	Sun Jun 18 15:02:02 2000
++++ gtop-1.0.9/gtop-memusage.c	Sun Jun 18 15:02:13 2000
+@@ -25,27 +25,27 @@
+ 			       N_("Show resident sizes of processes"),
+ 			       gtop_memusage_menu_cb,
+ 			       (gpointer) GTOP_MEMUSAGE_RESIDENT,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_Shared Sizes of Processes"),
+ 			       N_("Show shared sizes of processes"),
+ 			       gtop_memusage_menu_cb,
+ 			       (gpointer) GTOP_MEMUSAGE_SHARED,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_Total Sizes of Processes"),
+ 			       N_("Show total sizes of processes"),
+ 			       gtop_memusage_menu_cb,
+ 			       (gpointer) GTOP_MEMUSAGE_SIZE,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_Virtual Sizes of Processes"),
+ 			       N_("Show virtual sizes of processes"),
+ 			       gtop_memusage_menu_cb,
+ 			       (gpointer) GTOP_MEMUSAGE_VIRTUAL,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("S_wapped Sizes of Processes"),
+ 			       N_("Show swapped sizes of processes"),
+ 			       gtop_memusage_menu_cb,
+ 			       (gpointer) GTOP_MEMUSAGE_SWAP,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_END
+ };
+ 
+--- gtop-1.0.9/gtop-procview.c.gcc296	Sun Jun 18 15:02:34 2000
++++ gtop-1.0.9/gtop-procview.c	Sun Jun 18 15:02:45 2000
+@@ -29,12 +29,12 @@
+ 			       N_("Show all processes"),
+ 			       gtop_procview_menu_cb,
+ 			       (gpointer) GTOP_PROCVIEW_ALL,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_ITEM_DATA (N_("_User Processes"),
+ 			       N_("Only show user processes"),
+ 			       gtop_procview_menu_cb,
+ 			       (gpointer) GTOP_PROCVIEW_USER,
+-			       GNOME_APP_PIXMAP_NONE),
++			       (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_END
+ };
+ 
+@@ -48,15 +48,15 @@
+ 	(N_("Only _TTY Processes"),
+ 	 N_("Only show processes with a controlling TTY"),
+ 	 gtop_procview_flags_cb, (gpointer) GTOP_PROCVIEW_TTY,
+-	 GNOME_APP_PIXMAP_NONE),
++	 (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_TOGGLEITEM_DATA
+ 	(N_("Hide _Idle Processes"), N_("Hide idle processes"),
+ 	 gtop_procview_flags_cb, (gpointer) GTOP_PROCVIEW_IDLE,
+-	 GNOME_APP_PIXMAP_NONE),
++	 (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_TOGGLEITEM_DATA
+ 	(N_("Hide _System Processes"), N_("Hide system processes"),
+ 	 gtop_procview_flags_cb, (gpointer) GTOP_PROCVIEW_SYSTEM,
+-	 GNOME_APP_PIXMAP_NONE),
++	 (gconstpointer) GNOME_APP_PIXMAP_NONE),
+ 	GNOMEUIINFO_SEPARATOR,
+ 	GNOMEUIINFO_RADIOLIST (gtop_procview_radio_items),
+ 	GNOMEUIINFO_END
