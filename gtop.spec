@@ -12,6 +12,7 @@ Patch0:		%{name}-gcc296.patch
 Patch1:		%{name}-nodrag.patch
 Patch2:		%{name}-use_AM_GNU_GETTEXT.patch
 Patch3:		%{name}-configure.patch
+Patch4:		%{name}-desktop.patch
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -40,6 +41,7 @@ postaci graficznej informacje na temat pamiêci i procesów.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 rm -f missing
