@@ -40,7 +40,7 @@ postaci graficznej informacje na temat pamiêci i procesów.
 
 %build
 rm -f missing
-libtoolize --copy --force
+%{__libtoolize}
 gettextize --copy --force
 aclocal -I %{_aclocaldir}/gnome
 %{__autoconf}
