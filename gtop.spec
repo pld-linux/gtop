@@ -1,7 +1,7 @@
 Summary:	The GNOME system monitor
 Summary(pl):	Monitor systemu dla GNOME
 Name:		gtop
-Version:	1.0.3
+Version:	1.0.4
 Release: 	1
 Copyright: 	LGPL
 Group: 		X11/GNOME/Applications
