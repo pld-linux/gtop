@@ -9,10 +9,8 @@ Group(pl):	X11/GNOME/Aplikacje
 Source:		ftp://ftp.gnome.org/pub/GNOME/stable/sources/gtop/%{name}-%{version}.tar.gz
 Patch:		gtop-applnk.patch
 URL:		http://www.gnome.org/
-BuildRequires:	XFree86-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel
-BuildRequires:	glib-devel
 BuildRequires:	imlib-devel
 BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	zlib-devel
