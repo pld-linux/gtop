@@ -6,8 +6,8 @@ Release:	1
 License:	GPL
 Group:		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
-Source:		ftp://ftp.gnome.org/pub/GNOME/stable/sources/gtop/%{name}-%{version}.tar.gz
-Patch:		gtop-applnk.patch
+Source0:	ftp://ftp.gnome.org/pub/GNOME/stable/sources/gtop/%{name}-%{version}.tar.gz
+Patch0:		gtop-applnk.patch
 URL:		http://www.gnome.org/
 BuildRequires:	gnome-libs-devel
 BuildRequires:	gtk+-devel
@@ -20,12 +20,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_prefix		/usr/X11R6
 
 %description
-This package will install the GNOME system monitor gtop, which shows memory
-graphs and processes.
+This package will install the GNOME system monitor gtop, which shows
+memory graphs and processes.
 
 %description -l pl
 Ten pakiet zawiera gtop - monitor systemu dla GNOME, wy¶wietlaj±cy w
-postaci  graficznej informacje na temat pamiêci i procesów.
+postaci graficznej informacje na temat pamiêci i procesów.
 
 %prep
 %setup -q
