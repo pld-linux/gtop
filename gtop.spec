@@ -6,7 +6,7 @@ Release: 	1
 Copyright: 	LGPL
 Group: 		X11/GNOME/Applications
 Group(pl):	X11/GNOME/Aplikacje
-Source:		ftp://ftp.gnome.org/pub/GNOME/sources/gtop/%{name}-%{version}.tar.gz
+Source:		ftp://ftp.gnome.org/pub/GNOME/stable/sources/gtop/%{name}-%{version}.tar.gz
 Patch:		gtop-applnk.patch
 URL:		http://www.gnome.org/
 BuildRequires:	XFree86-devel
