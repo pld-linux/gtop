@@ -17,10 +17,9 @@ BuildRequires:	imlib-devel
 BuildRequires:	libgtop-devel >= 1.0.0
 BuildRequires:	zlib-devel
 BuildRequires:	gettext-devel
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
-%define		_applnkdir	%{_datadir}/applnk
 
 %description
 This package will install the GNOME system monitor gtop, which shows memory
