@@ -1,7 +1,7 @@
 Summary:	The GNOME system monitor
 Summary(pl):	Monitor systemu dla GNOME
 Name:		gtop
-Version:	1.0.12
+Version:	1.0.13
 Release:	1
 Epoch:		1
 License:	GPL
