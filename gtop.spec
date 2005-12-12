@@ -67,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS TODO ChangeLog
 %attr(755,root,root) %{_bindir}/*
 
-%config(noreplace) %verify(not size mtime md5) %{_datadir}/gtoprc
+%config(noreplace) %verify(not md5 mtime size) %{_datadir}/gtoprc
 
 %{_applnkdir}/System/gtop.desktop
 %{_pixmapsdir}/*
