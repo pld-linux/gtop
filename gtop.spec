@@ -1,5 +1,5 @@
 Summary:	The GNOME system monitor
-Summary(pl):	Monitor systemu dla GNOME
+Summary(pl.UTF-8):   Monitor systemu dla GNOME
 Name:		gtop
 Version:	1.0.13
 Release:	5
@@ -29,9 +29,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This package will install the GNOME system monitor gtop, which shows
 memory graphs and processes.
 
-%description -l pl
-Ten pakiet zawiera gtop - monitor systemu dla GNOME, wy¶wietlaj±cy w
-postaci graficznej informacje na temat pamiêci i procesów.
+%description -l pl.UTF-8
+Ten pakiet zawiera gtop - monitor systemu dla GNOME, wyÅ›wietlajÄ…cy w
+postaci graficznej informacje na temat pamiÄ™ci i procesÃ³w.
 
 %prep
 %setup -q
