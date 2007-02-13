@@ -1,5 +1,5 @@
 Summary:	The GNOME system monitor
-Summary(pl.UTF-8):   Monitor systemu dla GNOME
+Summary(pl.UTF-8):	Monitor systemu dla GNOME
 Name:		gtop
 Version:	1.0.13
 Release:	5
