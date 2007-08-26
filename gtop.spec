@@ -4,9 +4,9 @@ Name:		gtop
 Version:	1.0.13
 Release:	5
 Epoch:		1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gtop/1.0/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gtop/1.0/%{name}-%{version}.tar.gz
 # Source0-md5:	4580801db3c87784b25f46a5bf1f5aba
 Patch0:		%{name}-gcc296.patch
 Patch1:		%{name}-nodrag.patch
@@ -24,7 +24,6 @@ BuildRequires:	libtool
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description
 This package will install the GNOME system monitor gtop, which shows
 memory graphs and processes.
@@ -41,7 +40,6 @@ postaci graficznej informacje na temat pamięci i procesów.
 %patch3 -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__gettextize}
 %{__aclocal} -I %{_aclocaldir}/gnome
